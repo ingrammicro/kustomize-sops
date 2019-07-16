@@ -1,5 +1,9 @@
 # kustomize-sops
-Docker image for Kustomize with Sops Go plugin
+Docker image for Kustomize with Sops Go plugin from https://github.com/Agilicus/kustomize-sops
+
+## Reasoning
+To use the Sops Go plugin with Kustomize, Kustomize itself needs to be build at the same time as the plugin.
+Instructions on how to do this would get overly complex, which is why we opted to bundle them in a single Docker image.
 
 ## Usage
 
