@@ -22,7 +22,7 @@ In case you are using a GitHub resource in your overlay that is a private reposi
 
 If you are using a full base+overlay dir structure you can use following command:
 
-```docker run ingrammicro/kustomize-sops:v1.0.0 -e AZURE_CLIENT_ID=xxxx -e AZURE_CLIENT_SECRET=xxx -e AZURE_TENANT_ID=xxxx -v KUSTOMIZE_BASE:/kust KUSTOMIZE_OVERLAY [-v ~/.ssh/id_rsa:/root/.ssh/id_rsa]```
+```docker run ingrammicro/kustomize-sops:v1.0.0 -e AZURE_CLIENT_ID=xxxx -e AZURE_CLIENT_SECRET=xxx -e AZURE_TENANT_ID=xxxx -v KUSTOMIZE_BASE:/kust [-v ~/.ssh/id_rsa:/root/.ssh/id_rsa] KUSTOMIZE_OVERLAY```
 
 where:
 * KUSTOMIZE_BASE is the path to your base directory that contains a kustomization.yaml
