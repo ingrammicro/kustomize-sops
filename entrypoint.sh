@@ -7,10 +7,11 @@ if [ -z "$AZURE_CLIENT_ID" ] || [ -z "$AZURE_CLIENT_SECRET" ] || [ -z "$AZURE_TE
     exit 1
 fi
 
+mkdir -p ~/.ssh > /dev/null 2>&1
+ssh-keyscan github.com 2>/dev/null >> ~/.ssh/known_hosts
+
 if [ ! -z $1 ]; then
-    $1
+    /kustomize build --enable_alpha_plugins /kust/$1
 else
-    mkdir -p ~/.ssh > /dev/null 2>&1
-    ssh-keyscan github.com 2>/dev/null >> ~/.ssh/known_hosts
     /kustomize build --enable_alpha_plugins /kust/
 fi
