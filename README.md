@@ -1,5 +1,5 @@
 # kustomize-sops
-Docker image for Kustomize with Sops Go plugin from https://github.com/goabout/kustomize-sopssecretgenerator
+Docker image for Kustomize with Sops Exec plugin from https://github.com/goabout/kustomize-sopssecretgenerator
 
 ## Contents
 * Kustomize ~~v3.2.1~~ master (temporarily)
