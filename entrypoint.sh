@@ -11,7 +11,7 @@ mkdir -p ~/.ssh > /dev/null 2>&1
 ssh-keyscan github.com 2>/dev/null >> ~/.ssh/known_hosts
 
 if [ ! -z $1 ]; then
-    /kustomize build --enable_alpha_plugins /kust/$1
+    kustomize build --enable_alpha_plugins /kust/$1
 else
-    /kustomize build --enable_alpha_plugins /kust/
+    kustomize build --enable_alpha_plugins /kust/
 fi
