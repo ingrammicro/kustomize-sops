@@ -1,10 +1,29 @@
 # kustomize-sops
-Docker image for Kustomize with Sops Go plugin from https://github.com/Agilicus/kustomize-sops
+Docker image for Kustomize with Sops Go plugin from https://github.com/goabout/kustomize-sopssecretgenerator
 
-## Reasoning
-To use the Sops Go plugin with Kustomize, Kustomize itself needs to be build at the same time as the plugin.
-Instructions on how to do this would get overly complex, which is why we opted to bundle them in a single Docker image.
+## Contents
+* Kustomize ~~v3.2.1~~ master (temporarily)
+* SopsSecretGenerator v1.1.0
 
+## Sops-secret resource format
+
+__kustomization.yaml__
+```
+generators:
+  - SopsSecretGenerator.yaml
+```
+__SopsSecretGenerator.yaml__
+```
+apiVersion: goabout.com/v1beta1
+kind: SopsSecretGenerator
+disableNameSuffixHash: true #default: false
+metadata:
+  name: my-secret
+envs:
+  - secret-vars.enc.yaml
+files:
+  - secret-file.enc.yaml
+```
 ## Usage
 
 `docker pull ingrammicro/kustomize-sops:v2.0.0`
