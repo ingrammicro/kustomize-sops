@@ -1,9 +1,9 @@
 #!/bin/sh
 
-if [ -z "$AZURE_CLIENT_ID" ] || [ -z "$AZURE_CLIENT_SECRET" ] || [ -z "$AZURE_TENANT_ID" ]; then
+if [ ! -e "/root/.azure/accessTokens.json" ]; then
     echo "ERROR"
-    echo "Verify whether AZURE_CLIENT_ID, AZURE_CLIENT_SECRET AND AZURE_TENANT_ID variables are correctly set"
-    echo "and have permissions to access the Azure Vault used to encrypt the secrets"
+    echo "No Azure auth token found"
+    echo "Make sure you execute 'az login' in your command line before executing kustomize-sops"
     exit 1
 fi
 
